@@ -1,0 +1,35 @@
+{
+  "name": "textyess/module-integration",
+  "description": "Magento 2 - TextYess webhook integration for TextYess SaaS",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": ">=7.4 <8.3",
+    "magento/framework": "103.*|104.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "TextYess\\Integration\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "TextYess",
+      "email": "support@textyess.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "extra": {
+    "magento-compatibility": {
+      "2.4": "*"
+    }
+  }
+}

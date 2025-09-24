@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/config.xsd">
+    <default>
+        <textyess_integration>
+            <general>
+                <webhook_url_base>https://gateway.textyess.com/webhooks/magento/orders</webhook_url_base>
+            </general>
+        </textyess_integration>
+    </default>
+</config>

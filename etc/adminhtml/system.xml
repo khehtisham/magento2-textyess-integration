@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="textyess_integration" translate="label"
+                 sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>TextYess Integration</label>
+            <tab>general</tab>
+            <resource>TextYess_Integration::config</resource>
+
+            <group id="general" translate="label" sortOrder="10"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+
+                <field id="enabled" translate="label" type="select"
+                       sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <backend_model>TextYess\Integration\Model\Config\Backend\ValidateConfig</backend_model>
+                </field>
+
+                <field id="webhook_url_base" translate="label" type="text"
+                       sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Webhook Base URL</label>
+                    <comment>Example: https://gateway.textyess.com/webhooks/magento/orders</comment>
+                </field>
+
+                <field id="user_id" translate="label" type="text"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TextYess User ID</label>
+                </field>
+
+                <!-- Set HMAC Secret to global only -->
+                <field id="hmac_secret" translate="label" type="password"
+                       sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>HMAC Secret</label>
+                </field>
+
+                <field id="debug" translate="label" type="select"
+                     sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="1">
+                  <label>Enable Debug Logging</label>
+                  <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                  <comment><![CDATA[When enabled, detailed request/response logs will be written to <code>var/log/</code>. Recommended only for staging or troubleshooting.]]></comment>
+               </field>
+
+            </group>
+        </section>
+    </system>
+</config>
