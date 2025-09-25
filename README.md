@@ -37,6 +37,7 @@ composer require textyess/module-integration
 php bin/magento module:enable TextYess_Integration
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
 php bin/magento cache:flush
 
 ```
@@ -46,6 +47,7 @@ Composer will download the module into vendor/textyess/module-integration automa
 ## Configuration
 
 Navigate to:
+
 Admin Panel → Stores → Configuration → General →TextYess Integration → General Settings
 
 Settings:
@@ -70,5 +72,7 @@ To remove the module completely:
 php bin/magento module:disable TextYess_Integration
 composer remove textyess/module-integration
 php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
 php bin/magento cache:flush
 ```
